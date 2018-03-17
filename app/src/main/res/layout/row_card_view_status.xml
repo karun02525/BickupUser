@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rl_main"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/timemer"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/time_placeholder" />
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:layout_marginLeft="@dimen/dp_3"
+                android:layout_toRightOf="@+id/timemer"
+                android:id="@+id/txt_booking_status_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12:30Pm"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_marginRight="@dimen/dp_40"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/txt_booking_status_time"
+                android:id="@+id/txt_booking_status"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="booking_statusetett"
+                android:textSize="13sp" />
+
+            <RelativeLayout
+                android:layout_marginRight="@dimen/dp_5"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/img_booking_status"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/de_checkbox" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/view_hide"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_alignParentEnd="true"
+            android:gravity="right"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="14dp"
+                android:background="#5c5c5c" />
+
+        </RelativeLayout>
+
+
+
+
+
+<!--
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="-8dp"
+            android:layout_marginTop="-8dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="start" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="15dp"
+                android:layout_weight="1"
+                android:gravity="center|right">
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="1dp"
+                    android:background="#afafaf"
+
+                    />
+            </LinearLayout>
+        </LinearLayout>-->
+</RelativeLayout>

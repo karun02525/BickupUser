@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="5dp"
+    android:paddingEnd="5dp"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="100dp"
+    android:layout_marginTop="@dimen/dp_60"
+    android:background="@android:color/transparent">
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_marginTop="@dimen/dp_40"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rl_bottomSheet">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+       android:id="@+id/rl_upper_containe"
+        android:background="@android:color/transparent"
+        android:layout_alignParentStart="true">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/card_container">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:id="@+id/id_card_driver"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="10dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp">
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/img_driver_bottomshet"
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/driver"
+                        app:riv_corner_radius_bottom_left="0dp"
+                        app:riv_corner_radius_top_left="5dp"
+                        app:riv_corner_radius_bottom_right="5dp"
+                        app:riv_corner_radius_top_right="-0dp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/img_driver_bottomshet"
+                        android:layout_marginTop="12dp"
+                        android:paddingStart="8dp"
+                        android:layout_above="@+id/btn_asign"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/txt_drver_name_bottomsheet"
+
+                            android:background="@android:color/transparent"
+
+                            android:textSize="@dimen/medium_text"
+                            android:textColor="@color/black"
+                            android:text="Prashant Chauhan"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/txt_drver_address_bottomsheet"
+                            android:background="@android:color/transparent"
+                            android:layout_marginTop="-3dp"
+                            android:textSize="@dimen/small_text"
+                            android:textColor="@color/greyColor"
+                            android:text="Small Van- #0578"/>
+
+                    </LinearLayout>
+                    <Button
+                        android:id="@+id/btn_asign_bottomsheet"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="12dp"
+                        android:textAllCaps="true"
+                        android:layout_marginTop="6dp"
+                        android:paddingBottom="10dp"
+                        android:text="@string/txt_assign_another"
+                        style="@style/btn_style"
+                        android:layout_below="@+id/img_driver_bottomshet"/>
+                </RelativeLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+<ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="5dp"
+    android:layout_alignParentEnd="true"
+    android:id="@+id/img_call_bottomsheet"
+    android:layout_alignParentTop="true"
+    android:src="@drawable/call"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/medium_text"
+            android:text="@string/txt_tracking_status"
+            android:gravity="center"
+            android:id="@+id/txt_track_status"
+            android:visibility="gone"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bottom_sheet_behaviour"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/rl_upper_containe"
+        android:id="@+id/bottomSheet_layout"
+        android:orientation="vertical"
+        android:background="@drawable/bottom_sheet_behaviour">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/open_bottomSheet"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_expand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:id="@+id/track_status_bottomSheet"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/medium_text"
+                android:text="@string/txt_tracking_status"
+                />
+
+        </RelativeLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/greyColor"></View>
+
+
+      <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="-8dp"
+            android:layout_marginBottom="-8dp">
+
+          <android.support.v7.widget.RecyclerView
+              android:layout_marginTop="@dimen/dp_20"
+              android:layout_marginBottom="@dimen/dp_10"
+              android:id="@+id/recyclerView_status"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+        </RelativeLayout>
+
+</RelativeLayout>
+</android.support.v4.widget.NestedScrollView>

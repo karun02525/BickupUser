@@ -1,0 +1,9 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/fluper-android/Downloads/BickupUser-master/calender/AndroidManifest.xml:1:1-3:12
+INJECTED from /home/fluper-android/Downloads/BickupUser-master/calender/AndroidManifest.xml:1:1-3:12
+INJECTED from /home/fluper-android/Downloads/BickupUser-master/calender/AndroidManifest.xml:1:1-3:12
+	package
+		ADDED from /home/fluper-android/Downloads/BickupUser-master/calender/AndroidManifest.xml:1:11-46
+		INJECTED from /home/fluper-android/Downloads/BickupUser-master/calender/AndroidManifest.xml
+		INJECTED from /home/fluper-android/Downloads/BickupUser-master/calender/AndroidManifest.xml
