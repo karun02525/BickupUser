@@ -41,22 +41,14 @@ class PaymentActivity : AppCompatActivity() {
 
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
        // getClientTokenFromServer()
-        try {
-            initJsonParese()
-        }catch (e:Exception){}
-            val buyNowButton = findViewById<View>(R.id.buy_now) as Button
-        buyNowButton.setOnClickListener {
-            try {
-            onBraintreeSubmit()
-        }catch (e:Exception){}
-        }
+        initJsonParese()
+        val buyNowButton = findViewById<View>(R.id.buy_now) as Button
+        buyNowButton.setOnClickListener {  onBraintreeSubmit() }
     }
 
     private fun onBraintreeSubmit() {
         val dropInRequest = DropInRequest().clientToken(clientToken)
-        try {
-            startActivityForResult(dropInRequest.getIntent(this), BRAINTREE_REQUEST_CODE)
-        }catch (e:Exception){}
+        startActivityForResult(dropInRequest.getIntent(this), BRAINTREE_REQUEST_CODE)
     }
 
 
@@ -92,19 +84,19 @@ class PaymentActivity : AppCompatActivity() {
         })
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == BRAINTREE_REQUEST_CODE) {
             when (resultCode) {
                 Activity.RESULT_OK -> {
-                    val result = data.getParcelableExtra<DropInResult>(DropInResult.EXTRA_DROP_IN_RESULT)
+                    val result = data!!.getParcelableExtra<DropInResult>(DropInResult.EXTRA_DROP_IN_RESULT)
                     val paymentNonce = result.paymentMethodNonce!!.nonce
                     //send to your server
-                    Log.d(TAG, "Testing the app here :")
+                    Log.d(TAG, "Testing the app here : $paymentNonce")
                     sendPaymentNonceToServer(paymentNonce)
                 }
                 Activity.RESULT_CANCELED -> Log.d(TAG, "User cancelled payment ")
                 else -> {
-                    val error = data.getSerializableExtra(DropInActivity.EXTRA_ERROR) as Exception
+                    val error = data!!.getSerializableExtra(DropInActivity.EXTRA_ERROR) as Exception
                     Log.d(TAG, " error exception  ")
                 }
             }
